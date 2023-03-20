@@ -1,0 +1,19 @@
+<html>
+
+<script>
+  const modPath = "./modules/vgg-sdk.js";
+
+  import(modPath).then((mod) => {
+    console.log(mod.getSdk(), mod.vggSdk);
+
+    import(modPath).then((mod) => {
+      mod.setSdk("fakeSdk")
+
+      import(modPath).then((mod) => {
+        console.log(mod.getSdk(), mod.vggSdk);
+      });
+    });
+  });
+</script>
+
+</html>
